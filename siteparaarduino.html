@@ -1,85 +1,51 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Loading...</title>
-
+    <title>Meu Contro
+        le Arduino</title>
     <style>
-
-        body {
-
-            margin: 0;
-
-            padding: 0;
-
-            overflow: hidden;
-
-            height: 100vh;
-
-        }
-
-        iframe {
-
-            width: 100%;
-
-            height: 100%;
-
-            border: none;
-
-        }
-
+        /* CSS: Aqui a gente deixa o site bonito */
+        body { font-family: sans-serif; text-align: center; background: #f0f0f0; }
+        button { padding: 10px 20px; font-size: 18px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 5px; }
     </style>
-
 </head>
-
 <body>
 
-    <iframe id="contentFrame" src="https://app.emergent.sh/loading-preview?host=arduino-chat-link.cluster-6.preview.emergentcf.cloud" allowfullscreen></iframe>
+    <h1>Controle do Meu Arduino</h1>
+    
+    <button id="conectar">1. Conectar Arduino</button>
+    <br><br>
+    
+    <input type="text" id="mensagem" placeholder="Digite V aqui...">
+    <button id="enviar">2. Enviar</button>
 
     <script>
+        // JAVASCRIPT: Aqui é a mágica!
+        let porta;
+        let escritor;
 
-        // Listen for messages from the iframe
+        // Função para conectar na porta serial
+        document.getElementById('conectar').onclick = async () => {
+            // Pede permissão para usar o USB
+            porta = await navigator.serial.requestPort();
+            await porta.open({ baudRate: 9600 });
+            alert("Conectado com sucesso!");
+        };
 
-        window.addEventListener('message', function(event) {
-
-
-
-        console.log(event.origin);
-
-            // Optional: Add origin check for security
-
-            // if (!['https://dev.emergentagent.com', 'https://app.emergent.sh'].includes(event.origin)) return;
-
-
-
-            if (event.data && event.data.type === 'reload') {
-
-                const iframe = document.getElementById('contentFrame');
-
-                window.location.reload();
-
-            }
-
-
-
-            if (event.data && event.data.type === 'url') {
-
-                const iframe = document.getElementById('contentFrame');
-
-                window.open(event.data.url, '_blank');
-
-            }
-
-        });
-
+        // Função para enviar o texto
+        document.getElementById('enviar').onclick = async () => {
+            const texto = document.getElementById('mensagem').value;
+            
+            // Prepara o canal de escrita
+            const encoder = new TextEncoder();
+            const writer = porta.writable.getWriter();
+            
+            // Envia o texto + um \n (Enter) para o Arduino saber que acabou
+            await writer.write(encoder.encode(texto + "\n"));
+            
+            writer.releaseLock(); // Libera o canal para o próximo envio
+            console.log("Enviado: " + texto);
+        };
     </script>
-
 </body>
-
 </html>
