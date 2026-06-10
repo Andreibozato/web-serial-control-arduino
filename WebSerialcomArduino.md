@@ -19,6 +19,16 @@ O projeto utiliza uma ponte de comunicação serial para conectar dois ambientes
 * **Comunicação:** [com0com](http://com0com.sourceforge.net/) (Null-modem emulator).
 * **Interface:** HTML/JavaScript (Web Serial API).
 
+## 💻 Ambiente de Simulação
+Este projeto foi desenvolvido e testado de forma virtual, sem a necessidade de componentes físicos no momento.
+
+* **Software:** [SimulIDE](https://www.simulide.com/)
+* **Placa Simulada:** Arduino Uno
+* **Componentes Virtuais:** 
+  * LEDs para sinalização de tráfego.
+  * Resistores virtuais.
+  * Painel de conexões do simulador.
+
 ## 🤖 Créditos e Co-criação
 Este projeto foi desenvolvido com o apoio de ferramentas de Inteligência Artificial:
 * **Emergent:** Auxílio na estrutura das instruções e site.
