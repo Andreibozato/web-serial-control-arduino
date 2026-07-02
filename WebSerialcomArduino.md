@@ -29,6 +29,11 @@ Este projeto foi desenvolvido e testado de forma virtual, sem a necessidade de c
   * Resistores virtuais.
   * Painel de conexões do simulador.
 
+## Demonstração:
+
+https://github.com/user-attachments/assets/ff5a3615-4fb0-4643-a618-73123373663f
+
+
 ## 🤖 Créditos e Co-criação
 Este projeto foi desenvolvido com o apoio de ferramentas de Inteligência Artificial:
 * **Emergent:** Auxílio na estrutura das instruções e site.
