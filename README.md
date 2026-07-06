@@ -11,8 +11,8 @@ The project uses a serial communication bridge to connect two distinct environme
 3.  **Virtual Bridge:** Ports COM7 and COM8 are connected through the **com0com** software, creating a communication tunnel.
 
 ### ⚙️ Code Logic:
-* Upon starting, the simulator display shows the message: `"Waiting for message"`.
-* When the character **"V"** is sent by the website, the Arduino processes the information and changes the display to: `"Code received"`.
+* Upon starting, the simulator display shows the message: `"Aguardando mensagem"`.
+* When the character **"V"** is sent by the website, the Arduino processes the information and changes the display to: `"Código recebido"`.
 
 ## 🛠️ Technologies and Tools
 * **Simulated Hardware:** Arduino Uno on [SimulIDE](https://www.simulide.com/).
