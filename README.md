@@ -1,43 +1,42 @@
-# 🌐 Comunicação Web Serial com Arduino (SimulIDE)
+# 🌐 Web Serial Communication with Arduino (SimulIDE)
 
-Este projeto demonstra a integração entre uma interface web e uma simulação de Arduino, permitindo o envio de dados via porta serial virtual para controlar componentes em tempo real.
+This project demonstrates the integration between a web interface and an Arduino simulation, allowing the sending of data via a virtual serial port to control components in real time.
 
-## 🚀 Como o sistema funciona
+## 🚀 How the system works
 
-O projeto utiliza uma ponte de comunicação serial para conectar dois ambientes distintos:
+The project uses a serial communication bridge to connect two distinct environments:
 
-1.  **Interface Web (Lado Esquerdo):** Um site que utiliza a Web Serial API para se conectar à porta **COM7**. Através dele, é possível enviar comandos de texto para o hardware.
-2.  **Simulação Arduino (Lado Direito):** No software **SimulIDE**, um Arduino Uno está configurado na porta **COM8**. 
-3.  **Ponte Virtual:** As portas COM7 e COM8 estão conectadas através do software **com0com**, criando um túnel de comunicação.
+1.  **Web Interface (Left Side):** A website that uses the Web Serial API to connect to port **COM7**. Through it, it is possible to send text commands to the hardware.
+2.  **Arduino Simulation (Right Side):** In the **SimulIDE** software, an Arduino Uno is configured on port **COM8**. 
+3.  **Virtual Bridge:** Ports COM7 and COM8 are connected through the **com0com** software, creating a communication tunnel.
 
-### ⚙️ Lógica do Código:
-* Ao iniciar, o display do simulador exibe a mensagem: `"Aguardando mensagem"`.
-* Quando o caractere **"V"** é enviado pelo site, o Arduino processa a informação e muda o display para: `"Código recebido"`.
+### ⚙️ Code Logic:
+* Upon starting, the simulator display shows the message: `"Waiting for message"`.
+* When the character **"V"** is sent by the website, the Arduino processes the information and changes the display to: `"Code received"`.
 
-## 🛠️ Tecnologias e Ferramentas
-* **Hardware Simulado:** Arduino Uno no [SimulIDE](https://www.simulide.com/).
-* **Comunicação:** [com0com](http://com0com.sourceforge.net/) (Null-modem emulator).
+## 🛠️ Technologies and Tools
+* **Simulated Hardware:** Arduino Uno on [SimulIDE](https://www.simulide.com/).
+* **Communication:** [com0com](http://com0com.sourceforge.net/) (Null-modem emulator).
 * **Interface:** HTML/JavaScript (Web Serial API).
 
-## 💻 Ambiente de Simulação
-Este projeto foi desenvolvido e testado de forma virtual, sem a necessidade de componentes físicos no momento.
+## 💻 Simulation Environment
+This project was developed and tested virtually, without the need for physical components at the moment.
 
 * **Software:** [SimulIDE](https://www.simulide.com/)
-* **Placa Simulada:** Arduino Uno
-* **Componentes Virtuais:** 
-  * LEDs para sinalização de tráfego.
-  * Resistores virtuais.
-  * Painel de conexões do simulador.
+* **Simulated Board:** Arduino Uno
+* **Virtual Components:** * LEDs for traffic signaling.
+  * Virtual resistors.
+  * Simulator connection panel.
 
-## Demonstração:
+## Demonstration:
 
 https://github.com/user-attachments/assets/ff5a3615-4fb0-4643-a618-73123373663f
 
 
-## 🤖 Créditos e Co-criação
-Este projeto foi desenvolvido com o apoio de ferramentas de Inteligência Artificial:
-* **Emergent:** Auxílio na estrutura das instruções e site.
-* **Gemini (Google):** Desenvolvimento do código do Arduino e documentação técnica.
+## 🤖 Credits and Co-creation
+This project was developed with the support of Artificial Intelligence tools:
+* **Emergent:** Assistance with the structure of instructions and the website.
+* **Gemini (Google):** Development of the Arduino code and technical documentation.
 
 ---
-*Estudando a integração entre desenvolvimento Web e Robótica.*
+*Studying the integration between Web development and Robotics.*
